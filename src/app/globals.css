@@ -38,3 +38,280 @@ button {
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+/* =========================================================
+   NINA MESSENGER — PREMIUM UI
+   ========================================================= */
+
+:root {
+  --nina-bg: #070b14;
+  --nina-panel: rgba(15, 23, 38, 0.94);
+  --nina-panel-2: rgba(20, 30, 48, 0.94);
+  --nina-border: rgba(255, 255, 255, 0.075);
+  --nina-text: #f7f9ff;
+  --nina-muted: #8493aa;
+  --nina-blue: #3b82f6;
+  --nina-violet: #735cff;
+  --nina-purple: #a855f7;
+  --nina-green: #35d07f;
+}
+
+/* Scrollbar */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Selection */
+
+::selection {
+  background: rgba(115, 92, 255, 0.4);
+  color: white;
+}
+
+/* Global */
+
+html,
+body {
+  background:
+    radial-gradient(
+      circle at 70% -20%,
+      rgba(94, 92, 230, 0.14),
+      transparent 35%
+    ),
+    #070b14;
+
+  color: var(--nina-text);
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+/* Buttons */
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Inputs */
+
+input,
+textarea {
+  caret-color: #8b7cff;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748b;
+}
+
+/* Glass */
+
+.nina-glass {
+  background: rgba(15, 23, 38, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+/* Main gradient */
+
+.nina-gradient {
+  background:
+    linear-gradient(
+      135deg,
+      #28b8ff 0%,
+      #625cff 45%,
+      #a855f7 75%,
+      #e34bc4 100%
+    );
+}
+
+/* Gradient text */
+
+.nina-gradient-text {
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #b8c4ff 45%,
+      #9f8cff
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Avatar */
+
+.nina-avatar {
+  box-shadow:
+    0 0 0 2px rgba(115, 92, 255, 0.22),
+    0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Online dot */
+
+.nina-online {
+  box-shadow:
+    0 0 0 2px #111827,
+    0 0 12px rgba(53, 208, 127, 0.7);
+}
+
+/* Chat row */
+
+.nina-chat-row {
+  transition:
+    background 160ms ease,
+    transform 160ms ease,
+    border-color 160ms ease;
+}
+
+.nina-chat-row:hover {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+/* Message bubbles */
+
+.nina-message-me {
+  background:
+    linear-gradient(
+      135deg,
+      #3478f6,
+      #635bdf
+    );
+
+  box-shadow:
+    0 8px 24px rgba(55, 82, 200, 0.17);
+}
+
+.nina-message-other {
+  background: rgba(31, 43, 61, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.055);
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Composer */
+
+.nina-composer {
+  background: rgba(19, 29, 46, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.22);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Floating button */
+
+.nina-send {
+  background:
+    linear-gradient(
+      135deg,
+      #3987ff,
+      #755cff
+    );
+
+  box-shadow:
+    0 7px 22px rgba(91, 92, 230, 0.35);
+}
+
+/* Popup */
+
+.nina-popup {
+  background: rgba(19, 28, 44, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 22px 70px rgba(0, 0, 0, 0.48);
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Animations */
+
+@keyframes ninaFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ninaPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.nina-fade {
+  animation: ninaFadeIn 180ms ease-out;
+}
+
+.nina-pulse {
+  animation: ninaPulse 1.5s ease-in-out infinite;
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    position: fixed;
+    inset: 0;
+  }
+
+  .nina-mobile-safe-bottom {
+    padding-bottom:
+      max(8px, env(safe-area-inset-bottom));
+  }
+
+  .nina-mobile-safe-top {
+    padding-top:
+      env(safe-area-inset-top);
+  }
+}
