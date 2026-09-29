@@ -2322,17 +2322,17 @@ export default function ChatPage() {
   }
 
   return (
-    <main className="h-[100dvh] bg-[#0b1520] text-white flex overflow-hidden">
+    <main className="h-[100dvh] bg-[radial-gradient(circle_at_top_right,#182447_0%,#090e18_42%,#050810_100%)] text-white flex overflow-hidden">
       <aside
-        className={`w-full md:w-[390px] md:max-w-[38vw] bg-[#172431] border-r border-[#263442] flex flex-col shrink-0 ${
+        className={`w-full md:w-[390px] md:max-w-[38vw] bg-[#0c1422]/95 backdrop-blur-2xl border-r border-white/[0.06] flex flex-col shrink-0 ${
           selected
             ? "hidden md:flex"
             : "flex"
         }`}
       >
 
-        <div className="p-4 md:p-5 border-b border-[#263442] flex items-center gap-3 shrink-0">
-          <div className="w-12 h-12 rounded-full bg-[#3395e8] flex items-center justify-center font-bold text-xl">
+        <div className="p-4 md:p-5 border-b border-white/[0.06] flex items-center gap-3 shrink-0 bg-[#0d1625]/80 backdrop-blur-xl">
+          <div className="w-12 h-12 rounded-[17px] nina-gradient nina-avatar flex items-center justify-center font-black text-xl shadow-lg">
             {(me?.name || me?.username || "N")[0].toUpperCase()}
           </div>
 
@@ -2390,7 +2390,7 @@ export default function ChatPage() {
         </div>
 
         <div className="p-3 md:p-4 relative shrink-0">
-          <div className="bg-[#253444] rounded-2xl px-4 flex items-center gap-3">
+          <div className="bg-white/[0.055] border border-white/[0.06] rounded-2xl px-4 flex items-center gap-3 focus-within:border-[#735cff]/60 focus-within:bg-white/[0.07] transition">
             <Search
               className="text-[#8fa8c1]"
               size={21}
@@ -2407,7 +2407,7 @@ export default function ChatPage() {
           </div>
 
           {people.length > 0 && (
-            <div className="absolute left-4 right-4 top-[78px] z-30 bg-[#1d2b39] border border-[#314254] rounded-xl overflow-hidden shadow-2xl">
+            <div className="absolute left-4 right-4 top-[78px] z-30 nina-popup rounded-2xl overflow-hidden">
               {people.map((person) => (
                 <button
                   key={person.id}
@@ -2532,14 +2532,14 @@ export default function ChatPage() {
                       selectExistingChat(item);
                     }
                   }}
-                  className={`w-full p-3 md:p-4 rounded-2xl flex items-center gap-3 text-left transition-all duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#3395e8]/50 ${
+                  className={`w-full p-3 md:p-3.5 rounded-[20px] flex items-center gap-3 text-left nina-chat-row transition-all duration-150 cursor-pointer border border-transparent focus:outline-none focus:ring-2 focus:ring-[#735cff]/40 ${
                     chatId === item.chat_id
-                      ? "bg-[#2b4053]"
-                      : "hover:bg-[#223242]"
+                      ? "bg-gradient-to-r from-[#233252]/90 to-[#1a2640]/90 border-white/[0.07] shadow-lg"
+                      : "hover:bg-white/[0.045]"
                   }`}
                 >
                   <div className="relative w-12 h-12 shrink-0">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-[#3395e8] flex items-center justify-center font-bold">
+                    <div className="w-12 h-12 rounded-[17px] overflow-hidden nina-gradient nina-avatar flex items-center justify-center font-bold">
                       {item.person.avatar_url ? (
                         <img
                           src={item.person.avatar_url}
@@ -2590,7 +2590,7 @@ export default function ChatPage() {
 
                       {item.unread_count > 0 && (
                         <div
-                          className="min-w-6 h-6 px-2 rounded-full bg-[#3395e8] text-white text-xs font-bold flex items-center justify-center shadow-lg"
+                          className="min-w-6 h-6 px-2 rounded-full nina-gradient text-white text-xs font-bold flex items-center justify-center shadow-lg"
                           title={`${item.unread_count} ta o‘qilmagan xabar`}
                         >
                           {item.unread_count > 99
@@ -2689,7 +2689,7 @@ export default function ChatPage() {
           </div>
         ) : (
           <>
-            <header className="h-[68px] md:h-[76px] border-b border-[#263442] flex items-center px-3 md:px-6 gap-2 md:gap-3 bg-[#111e2a] shrink-0">
+            <header className="h-[68px] md:h-[76px] border-b border-white/[0.06] flex items-center px-3 md:px-6 gap-2 md:gap-3 bg-[#0c1422]/85 backdrop-blur-2xl shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.12)] z-20">
               <button
                 type="button"
                 onClick={() => {
@@ -2714,7 +2714,7 @@ export default function ChatPage() {
                 type="button"
                 onClick={openSelectedProfile}
                 title="Profilni ochish"
-                className="relative w-10 h-10 md:w-11 md:h-11 rounded-full shrink-0 overflow-hidden hover:opacity-90 transition"
+                className="relative w-10 h-10 md:w-11 md:h-11 rounded-[15px] shrink-0 overflow-hidden hover:opacity-90 transition nina-avatar"
               >
                 {selected.avatar_url ? (
                   <img
@@ -2723,7 +2723,7 @@ export default function ChatPage() {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <div className="w-full h-full bg-[#3395e8] flex items-center justify-center font-bold">
+                  <div className="w-full h-full nina-gradient flex items-center justify-center font-bold">
                     {(selected.name ||
                       selected.username ||
                       "N")[0].toUpperCase()}
@@ -2856,7 +2856,7 @@ export default function ChatPage() {
               </div>
             )}
 
-            <div className="flex-1 min-h-0 overflow-y-auto px-3 py-4 md:p-6 space-y-2">
+            <div className="flex-1 min-h-0 overflow-y-auto px-3 py-5 md:px-7 md:py-6 space-y-2 bg-[radial-gradient(circle_at_50%_0%,rgba(73,72,160,0.10),transparent_36%)]">
               {messages.map((message) => {
                 const mine =
                   message.sender_id === userId;
@@ -2881,10 +2881,10 @@ export default function ChatPage() {
                     }`}
                   >
                     <div
-                      className={`relative max-w-[88%] sm:max-w-[80%] md:max-w-[70%] px-3 md:px-4 py-2 rounded-2xl ${
+                      className={`relative max-w-[88%] sm:max-w-[78%] md:max-w-[68%] px-3.5 md:px-4 py-2.5 rounded-[20px] nina-fade ${
                         mine
-                          ? "bg-[#3395e8] rounded-br-md"
-                          : "bg-[#223242] rounded-bl-md"
+                          ? "nina-message-me rounded-br-[6px]"
+                          : "nina-message-other rounded-bl-[6px]"
                       }`}
                     >
                       {!mine && editingMessageId !== message.id && (
@@ -2899,7 +2899,7 @@ export default function ChatPage() {
                               )
                             }
                             title="Reaction"
-                            className="w-8 h-8 rounded-full bg-[#172431] hover:bg-[#2b4053] flex items-center justify-center text-sm"
+                            className="w-8 h-8 rounded-full nina-popup hover:bg-[#283751] flex items-center justify-center text-sm"
                           >
                             😊
                           </button>
@@ -2910,7 +2910,7 @@ export default function ChatPage() {
                               startReply(message)
                             }
                             title="Javob berish"
-                            className="w-8 h-8 rounded-full bg-[#172431] hover:bg-[#2b4053] flex items-center justify-center"
+                            className="w-8 h-8 rounded-full nina-popup hover:bg-[#283751] flex items-center justify-center"
                           >
                             <Reply size={16} />
                           </button>
@@ -2929,7 +2929,7 @@ export default function ChatPage() {
                               )
                             }
                             title="Reaction"
-                            className="w-8 h-8 rounded-full bg-[#172431] hover:bg-[#2b4053] flex items-center justify-center text-sm"
+                            className="w-8 h-8 rounded-full nina-popup hover:bg-[#283751] flex items-center justify-center text-sm"
                           >
                             😊
                           </button>
@@ -2945,13 +2945,13 @@ export default function ChatPage() {
                               )
                             }
                             title="Xabar amallari"
-                            className="w-8 h-8 rounded-full bg-[#172431] hover:bg-[#2b4053] flex items-center justify-center"
+                            className="w-8 h-8 rounded-full nina-popup hover:bg-[#283751] flex items-center justify-center"
                           >
                             <MoreVertical size={17} />
                           </button>
 
                           {messageMenuId === message.id && (
-                            <div className="absolute right-8 top-0 z-50 w-44 bg-[#1d2b39] border border-[#314254] rounded-xl overflow-hidden shadow-2xl">
+                            <div className="absolute right-8 top-0 z-50 w-44 nina-popup rounded-2xl overflow-hidden">
                               <button
                                 type="button"
                                 onClick={() =>
@@ -3005,7 +3005,7 @@ export default function ChatPage() {
 
                       {reactionPickerId === message.id && (
                         <div
-                          className={`absolute top-10 z-50 flex items-center gap-1 bg-[#111e2a] border border-[#314254] rounded-full px-2 py-2 shadow-2xl ${
+                          className={`absolute top-10 z-50 flex items-center gap-1 nina-popup rounded-full px-2 py-2 ${
                             mine
                               ? "right-0"
                               : "left-0"
@@ -3246,10 +3246,10 @@ export default function ChatPage() {
               />
             </div>
 
-            <div className="border-t border-[#263442] bg-[#111e2a] shrink-0">
+            <div className="border-t border-white/[0.06] bg-[#090f1b]/90 backdrop-blur-2xl shrink-0 nina-mobile-safe-bottom">
               {replyingTo && (
                 <div className="px-2 md:px-4 pt-2 md:pt-3">
-                  <div className="bg-[#1b2a38] border-l-4 border-[#3395e8] rounded-xl px-4 py-3 flex items-center gap-3">
+                  <div className="bg-white/[0.045] border border-white/[0.06] border-l-4 border-l-[#735cff] rounded-2xl px-4 py-3 flex items-center gap-3">
                     <Reply
                       size={20}
                       className="text-[#3395e8] shrink-0"
@@ -3283,7 +3283,7 @@ export default function ChatPage() {
                 </div>
               )}
 
-              <div className="px-2 py-2 md:p-4 flex gap-2 md:gap-3 items-center">
+              <div className="px-2.5 py-2.5 md:px-5 md:py-4 flex gap-2 md:gap-3 items-center">
               <input
                 id="nina-file-input"
                 type="file"
@@ -3309,7 +3309,7 @@ export default function ChatPage() {
                     ?.click();
                 }}
                 title="Rasm, video yoki fayl yuborish"
-                className="w-11 h-11 md:w-13 md:h-13 p-3 md:p-4 rounded-full bg-[#223242] hover:bg-[#2b4053] disabled:opacity-50 shrink-0"
+                className="w-11 h-11 md:w-13 md:h-13 p-3 md:p-4 rounded-[16px] bg-white/[0.06] border border-white/[0.06] hover:bg-white/[0.10] disabled:opacity-50 shrink-0 transition"
               >
                 {uploading ? (
                   <Loader2 size={22} className="animate-spin" />
@@ -3328,7 +3328,7 @@ export default function ChatPage() {
                     setMessageMenuId(null);
                   }}
                   title="Emoji"
-                  className="w-11 h-11 md:w-13 md:h-13 p-2 md:p-3 rounded-full bg-[#223242] hover:bg-[#2b4053] disabled:opacity-50 flex items-center justify-center text-2xl"
+                  className="w-11 h-11 md:w-13 md:h-13 p-2 md:p-3 rounded-[16px] bg-white/[0.06] border border-white/[0.06] hover:bg-white/[0.10] disabled:opacity-50 flex items-center justify-center text-2xl transition"
                 >
                   😀
                 </button>
@@ -3368,7 +3368,7 @@ export default function ChatPage() {
                   }
                 }}
                 placeholder="Xabar yozing..."
-                className="flex-1 min-w-0 bg-[#223242] rounded-2xl px-3 md:px-5 h-11 md:h-13 outline-none text-sm md:text-base"
+                className="flex-1 min-w-0 nina-composer rounded-[18px] px-4 md:px-5 h-11 md:h-13 outline-none text-sm md:text-base focus:border-[#735cff]/60 transition"
               />
 
               {recording ? (
@@ -3390,7 +3390,7 @@ export default function ChatPage() {
                 <button
                   onClick={sendMessage}
                   disabled={uploading}
-                  className="w-11 h-11 md:w-13 md:h-13 p-3 md:p-4 rounded-full bg-[#3395e8] hover:opacity-90 disabled:opacity-50 shrink-0"
+                  className="w-11 h-11 md:w-13 md:h-13 p-3 md:p-4 rounded-[16px] nina-send hover:brightness-110 disabled:opacity-50 shrink-0 transition"
                 >
                   <Send size={22} />
                 </button>
@@ -3400,7 +3400,7 @@ export default function ChatPage() {
                   onClick={startVoiceRecording}
                   disabled={uploading}
                   title="Ovozli xabar yozish"
-                  className="w-11 h-11 md:w-13 md:h-13 p-3 md:p-4 rounded-full bg-[#3395e8] hover:opacity-90 disabled:opacity-50 shrink-0"
+                  className="w-11 h-11 md:w-13 md:h-13 p-3 md:p-4 rounded-[16px] nina-send hover:brightness-110 disabled:opacity-50 shrink-0 transition"
                 >
                   {uploading ? (
                     <Loader2 size={22} className="animate-spin" />
@@ -3421,10 +3421,10 @@ export default function ChatPage() {
           onClick={() => setProfileViewOpen(false)}
         >
           <div
-            className="w-full max-w-[390px] bg-[#172431] border border-[#314254] rounded-3xl shadow-2xl overflow-hidden"
+            className="w-full max-w-[390px] nina-popup rounded-[30px] overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative h-28 bg-gradient-to-br from-[#3395e8] to-[#172431]">
+            <div className="relative h-32 bg-gradient-to-br from-[#23b7ff] via-[#655cff] to-[#b14ee8]">
               <button
                 type="button"
                 onClick={() => setProfileViewOpen(false)}
@@ -3437,7 +3437,7 @@ export default function ChatPage() {
 
             <div className="px-6 pb-6">
               <div className="flex justify-center -mt-14">
-                <div className="w-28 h-28 rounded-full border-4 border-[#172431] overflow-hidden bg-[#3395e8] flex items-center justify-center text-3xl font-bold">
+                <div className="w-28 h-28 rounded-[32px] border-4 border-[#111827] overflow-hidden nina-gradient nina-avatar flex items-center justify-center text-3xl font-black">
                   {selected.avatar_url ? (
                     <img
                       src={selected.avatar_url}
@@ -3531,7 +3531,7 @@ export default function ChatPage() {
           onClick={() => setMuteMenuChat(null)}
         >
           <div
-            className="w-full max-w-sm bg-[#172431] border border-[#314254] rounded-2xl overflow-hidden shadow-2xl"
+            className="w-full max-w-sm nina-popup rounded-[26px] overflow-hidden"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="px-5 py-4 border-b border-[#314254]">
@@ -3623,6 +3623,7 @@ export default function ChatPage() {
     </main>
   );
 }
+
 
 
 
