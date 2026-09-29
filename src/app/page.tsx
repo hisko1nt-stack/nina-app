@@ -60,6 +60,9 @@ export default function LoginPage() {
       provider: "google",
       options: {
         redirectTo: `${window.location.origin}/chat`,
+        queryParams: {
+          prompt: "select_account",
+        },
       },
     });
 
@@ -203,3 +206,4 @@ export default function LoginPage() {
     </main>
   );
 }
+
