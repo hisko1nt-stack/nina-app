@@ -514,7 +514,7 @@ const styles: Record<
   center: {
     minHeight: "100vh",
     background:
-      "radial-gradient(circle at top, #172b3d 0%, #0e1621 45%, #090f15 100%)",
+      "radial-gradient(circle at 50% -10%, #22285a 0%, #0c1220 38%, #050810 100%)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -525,12 +525,12 @@ const styles: Record<
   card: {
     width: "100%",
     maxWidth: 540,
-    background: "rgba(23, 33, 43, 0.96)",
-    border: "1px solid #263b4d",
-    borderRadius: 28,
+    background: "rgba(12, 18, 32, 0.88)",
+    border: "1px solid rgba(255,255,255,0.08)",
+    borderRadius: 32,
     padding: 28,
     boxShadow:
-      "0 25px 80px rgba(0, 0, 0, 0.35)",
+      "0 30px 100px rgba(0,0,0,0.55)",
   },
 
   topBar: {
@@ -543,9 +543,9 @@ const styles: Record<
   iconButton: {
     width: 44,
     height: 44,
-    borderRadius: 14,
-    border: "1px solid #2b4153",
-    background: "#101b26",
+    borderRadius: 15,
+    border: "1px solid rgba(255,255,255,0.08)",
+    background: "rgba(255,255,255,0.055)",
     color: "#dceaf6",
     display: "flex",
     alignItems: "center",
@@ -561,8 +561,8 @@ const styles: Record<
   brandLogo: {
     width: 42,
     height: 42,
-    borderRadius: 14,
-    background: "#3390ec",
+    borderRadius: 15,
+    background: "linear-gradient(135deg, #25baff 0%, #635cff 48%, #b64ee7 100%)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -576,7 +576,7 @@ const styles: Record<
   },
 
   brandSub: {
-    color: "#7f9ab2",
+    color: "#8594ad",
     fontSize: 12,
     marginTop: 2,
   },
@@ -596,19 +596,19 @@ const styles: Record<
   avatarImage: {
     width: "100%",
     height: "100%",
-    borderRadius: "50%",
+    borderRadius: 34,
     objectFit: "cover",
-    border: "4px solid #243b50",
-    background: "#0e1621",
+    border: "4px solid rgba(255,255,255,0.10)",
+    background: "#0b111e",
   },
 
   avatarFallback: {
     width: "100%",
     height: "100%",
-    borderRadius: "50%",
+    borderRadius: 34,
     background:
-      "linear-gradient(135deg, #3390ec, #7456e8)",
-    border: "4px solid #243b50",
+      "linear-gradient(135deg, #25baff, #635cff 50%, #b64ee7)",
+    border: "4px solid rgba(255,255,255,0.10)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -622,9 +622,9 @@ const styles: Record<
     bottom: 2,
     width: 40,
     height: 40,
-    borderRadius: "50%",
-    border: "3px solid #17212b",
-    background: "#3390ec",
+    borderRadius: 34,
+    border: "3px solid #0c1220",
+    background: "linear-gradient(135deg, #25baff 0%, #635cff 48%, #b64ee7 100%)",
     color: "white",
     display: "flex",
     alignItems: "center",
@@ -640,7 +640,7 @@ const styles: Record<
 
   avatarUsername: {
     marginTop: 4,
-    color: "#8ea6bd",
+    color: "#8998b0",
     fontSize: 14,
   },
 
@@ -648,14 +648,14 @@ const styles: Record<
     marginTop: 12,
     border: "none",
     background: "transparent",
-    color: "#58a9f7",
+    color: "#8d8cff",
     fontSize: 14,
     fontWeight: 700,
   },
 
   divider: {
     height: 1,
-    background: "#263746",
+    background: "rgba(255,255,255,0.07)",
     margin: "25px 0 6px",
   },
 
@@ -663,7 +663,7 @@ const styles: Record<
     display: "flex",
     alignItems: "center",
     gap: 7,
-    color: "#a9bdd0",
+    color: "#b8c2d4",
     marginBottom: 8,
     marginTop: 18,
     fontSize: 14,
@@ -674,8 +674,8 @@ const styles: Record<
     width: "100%",
     padding: "15px 17px",
     borderRadius: 15,
-    border: "1px solid #293f51",
-    background: "#0e1621",
+    border: "1px solid rgba(255,255,255,0.08)",
+    background: "#0b111e",
     color: "white",
     outline: "none",
     fontSize: 16,
@@ -684,15 +684,15 @@ const styles: Record<
   usernameBox: {
     display: "flex",
     alignItems: "center",
-    border: "1px solid #293f51",
-    background: "#0e1621",
+    border: "1px solid rgba(255,255,255,0.08)",
+    background: "#0b111e",
     borderRadius: 15,
     overflow: "hidden",
   },
 
   at: {
     paddingLeft: 17,
-    color: "#3390ec",
+    color: "#8b7cff",
     fontSize: 18,
     fontWeight: 800,
   },
@@ -708,7 +708,7 @@ const styles: Record<
   },
 
   hint: {
-    color: "#617b92",
+    color: "#66758e",
     fontSize: 12,
     marginTop: 7,
     paddingLeft: 4,
@@ -720,8 +720,8 @@ const styles: Record<
     resize: "vertical",
     padding: "15px 17px",
     borderRadius: 15,
-    border: "1px solid #293f51",
-    background: "#0e1621",
+    border: "1px solid rgba(255,255,255,0.08)",
+    background: "#0b111e",
     color: "white",
     outline: "none",
     fontSize: 15,
@@ -730,7 +730,7 @@ const styles: Record<
 
   counter: {
     textAlign: "right",
-    color: "#647f96",
+    color: "#718099",
     fontSize: 12,
     marginTop: 6,
   },
@@ -760,7 +760,7 @@ const styles: Record<
     padding: 15,
     border: "none",
     borderRadius: 15,
-    background: "#3390ec",
+    background: "linear-gradient(135deg, #25baff 0%, #635cff 48%, #b64ee7 100%)",
     color: "white",
     fontWeight: 800,
     fontSize: 16,
@@ -775,8 +775,9 @@ const styles: Record<
     flexDirection: "column",
     alignItems: "center",
     gap: 12,
-    color: "#9db1c5",
+    color: "#9aa8bd",
     fontSize: 16,
   },
 };
+
 
